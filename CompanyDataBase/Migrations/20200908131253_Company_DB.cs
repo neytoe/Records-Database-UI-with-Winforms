@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CompanyDataBase.Migrations
 {
-    public partial class initial : Migration
+    public partial class Company_DB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,13 +11,13 @@ namespace CompanyDataBase.Migrations
                 name: "Departments",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    DepartmentId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DepartmentName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Departments", x => x.Id);
+                    table.PrimaryKey("PK_Departments", x => x.DepartmentId);
                 });
 
             migrationBuilder.CreateTable(
@@ -32,7 +32,7 @@ namespace CompanyDataBase.Migrations
                     PhoneNumber = table.Column<string>(nullable: true),
                     HireDate = table.Column<DateTime>(nullable: false),
                     Salary = table.Column<decimal>(nullable: false),
-                    DepartmentId = table.Column<int>(nullable: true)
+                    DepartmentId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,8 +41,8 @@ namespace CompanyDataBase.Migrations
                         name: "FK_Employees_Departments_DepartmentId",
                         column: x => x.DepartmentId,
                         principalTable: "Departments",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "DepartmentId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

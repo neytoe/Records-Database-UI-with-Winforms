@@ -1,4 +1,5 @@
 using CompanyDataBase;
+using CompanyDataBase.Config;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -19,9 +20,9 @@ namespace CompanyUI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1(Config.MyConnect, Config.MyDeptMethods, Config.MyEmployeeMethods));
             
-            
+
         }
        
 

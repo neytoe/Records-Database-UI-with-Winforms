@@ -14,6 +14,8 @@ namespace Model
         public string PhoneNumber { get; set; }
         public DateTime HireDate { get; set; }
         public decimal Salary { get; set; }
-        public virtual Department Department { get; set; }
+
+        public int? DepartmentId { get; set; }
+        public Department Department { get; set; }
     }
 }

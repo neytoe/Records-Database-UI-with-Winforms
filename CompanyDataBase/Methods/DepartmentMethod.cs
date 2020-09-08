@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CompanyDataBase
 {
-   public class DepartmentMethod
+   public class DepartmentMethod:IDepartmentMethod
     {   
         public void AddDept(string deptname)
         {
@@ -20,7 +20,7 @@ namespace CompanyDataBase
 
         public void DeleteDept(int deptId)
         {
-            var dept = new Department { Id = deptId};
+            var dept = new Department { DepartmentId = deptId};
             using (var context = new ConnectContext())
             {
                 context.Departments.Remove(dept);
@@ -28,27 +28,21 @@ namespace CompanyDataBase
             }
         }
 
-        public void updateDept(string deptName)
-        {
-           // var dept = new Department { Id = deptId };
-            using (var context = new ConnectContext())
-            {
-              //  context.Departments.Remove(dept);
-                context.SaveChanges();
-            }
-        }
+
 
         public List<Department> GetDepts()
-        {
+        {   
 
-            List<Department> Depts = new List<Department>();
+           // List<Department> Depts = new List<Department>();
             using (var context = new ConnectContext())
             {
-                //Depts = context.Departments.Where(s => s.)
-                context.SaveChanges();
+
+              return  context.Departments.ToList();
             }
 
-            return Depts;
+
         }
+
+      
     }
 }

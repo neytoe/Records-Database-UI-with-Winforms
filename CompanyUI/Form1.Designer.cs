@@ -32,6 +32,7 @@
             this.NavigateQueriesBtn = new System.Windows.Forms.Button();
             this.NavigateDeptPage = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.NavigateHomeBtn = new System.Windows.Forms.Button();
             this.employeeui1 = new CompanyUI.EmployeeUI();
             this.departmentui1 = new CompanyUI.DepartmentUI();
             this.queriesui1 = new CompanyUI.QueriesUI();
@@ -42,9 +43,12 @@
             // NavigateEmployeeBtn
             // 
             this.NavigateEmployeeBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.NavigateEmployeeBtn.Location = new System.Drawing.Point(36, 81);
+            this.NavigateEmployeeBtn.FlatAppearance.BorderSize = 0;
+            this.NavigateEmployeeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NavigateEmployeeBtn.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NavigateEmployeeBtn.Location = new System.Drawing.Point(24, 182);
             this.NavigateEmployeeBtn.Name = "NavigateEmployeeBtn";
-            this.NavigateEmployeeBtn.Size = new System.Drawing.Size(186, 47);
+            this.NavigateEmployeeBtn.Size = new System.Drawing.Size(207, 47);
             this.NavigateEmployeeBtn.TabIndex = 0;
             this.NavigateEmployeeBtn.Text = "Go To Employee Page";
             this.NavigateEmployeeBtn.UseVisualStyleBackColor = false;
@@ -53,9 +57,12 @@
             // NavigateQueriesBtn
             // 
             this.NavigateQueriesBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.NavigateQueriesBtn.Location = new System.Drawing.Point(36, 437);
+            this.NavigateQueriesBtn.FlatAppearance.BorderSize = 0;
+            this.NavigateQueriesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NavigateQueriesBtn.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NavigateQueriesBtn.Location = new System.Drawing.Point(24, 437);
             this.NavigateQueriesBtn.Name = "NavigateQueriesBtn";
-            this.NavigateQueriesBtn.Size = new System.Drawing.Size(186, 47);
+            this.NavigateQueriesBtn.Size = new System.Drawing.Size(207, 47);
             this.NavigateQueriesBtn.TabIndex = 0;
             this.NavigateQueriesBtn.Text = "Go To Queries Page";
             this.NavigateQueriesBtn.UseVisualStyleBackColor = false;
@@ -64,9 +71,12 @@
             // NavigateDeptPage
             // 
             this.NavigateDeptPage.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.NavigateDeptPage.Location = new System.Drawing.Point(36, 259);
+            this.NavigateDeptPage.FlatAppearance.BorderSize = 0;
+            this.NavigateDeptPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NavigateDeptPage.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NavigateDeptPage.Location = new System.Drawing.Point(24, 316);
             this.NavigateDeptPage.Name = "NavigateDeptPage";
-            this.NavigateDeptPage.Size = new System.Drawing.Size(186, 47);
+            this.NavigateDeptPage.Size = new System.Drawing.Size(207, 47);
             this.NavigateDeptPage.TabIndex = 0;
             this.NavigateDeptPage.Text = "Go To Department Page";
             this.NavigateDeptPage.UseVisualStyleBackColor = false;
@@ -74,6 +84,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.NavigateHomeBtn);
             this.groupBox1.Controls.Add(this.NavigateEmployeeBtn);
             this.groupBox1.Controls.Add(this.NavigateQueriesBtn);
             this.groupBox1.Controls.Add(this.NavigateDeptPage);
@@ -83,6 +94,20 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Control";
+            // 
+            // NavigateHomeBtn
+            // 
+            this.NavigateHomeBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.NavigateHomeBtn.FlatAppearance.BorderSize = 0;
+            this.NavigateHomeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NavigateHomeBtn.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NavigateHomeBtn.Location = new System.Drawing.Point(24, 77);
+            this.NavigateHomeBtn.Name = "NavigateHomeBtn";
+            this.NavigateHomeBtn.Size = new System.Drawing.Size(207, 43);
+            this.NavigateHomeBtn.TabIndex = 1;
+            this.NavigateHomeBtn.Text = "Home";
+            this.NavigateHomeBtn.UseVisualStyleBackColor = false;
+            this.NavigateHomeBtn.Click += new System.EventHandler(this.NavigateHomeBtn_Click);
             // 
             // employeeui1
             // 
@@ -101,10 +126,11 @@
             this.departmentui1.Name = "departmentui1";
             this.departmentui1.Size = new System.Drawing.Size(1019, 675);
             this.departmentui1.TabIndex = 3;
+            this.departmentui1.Load += new System.EventHandler(this.departmentui1_Load);
             // 
             // queriesui1
             // 
-            this.queriesui1.Location = new System.Drawing.Point(268, 21);
+            this.queriesui1.Location = new System.Drawing.Point(280, 31);
             this.queriesui1.MaximumSize = new System.Drawing.Size(1019, 675);
             this.queriesui1.MinimumSize = new System.Drawing.Size(1019, 675);
             this.queriesui1.Name = "queriesui1";
@@ -154,6 +180,7 @@
         private DepartmentUI departmentui1;
         private QueriesUI queriesui1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button NavigateHomeBtn;
     }
 }
 

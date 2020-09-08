@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CompanyDataBase.Migrations
 {
     [DbContext(typeof(ConnectContext))]
-    [Migration("20200907135400_initial")]
-    partial class initial
+    [Migration("20200908131253_Company_DB")]
+    partial class Company_DB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,7 @@ namespace CompanyDataBase.Migrations
 
             modelBuilder.Entity("Model.Department", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("DepartmentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -31,7 +31,7 @@ namespace CompanyDataBase.Migrations
                     b.Property<string>("DepartmentName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("DepartmentId");
 
                     b.ToTable("Departments");
                 });
@@ -43,7 +43,7 @@ namespace CompanyDataBase.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("DepartmentId")
+                    b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -74,8 +74,10 @@ namespace CompanyDataBase.Migrations
             modelBuilder.Entity("Model.Employee", b =>
                 {
                     b.HasOne("Model.Department", "Department")
-                        .WithMany("AllEmployees")
-                        .HasForeignKey("DepartmentId");
+                        .WithMany()
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

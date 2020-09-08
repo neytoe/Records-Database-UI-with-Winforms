@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CompanyDataBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace CompanyUI
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        ConnectContext Connect;
+        public static IEmployeeMethod EmpMethods { get; set; }
+        public static IDepartmentMethod DeptMethods { get; set; }
+        public Form1(ConnectContext connect, IDepartmentMethod deptMethods, IEmployeeMethod empMethods)
         {
             InitializeComponent();
+            Connect = connect;
+            EmpMethods = empMethods;
+            DeptMethods = deptMethods;
+
         }
 
         private void EmployeeForm_Load(object sender, EventArgs e)
@@ -47,6 +55,18 @@ namespace CompanyUI
             departmentui1.Hide();
             queriesui1.Show();
             departmentui1.BringToFront();
+
+        }
+
+        private void NavigateHomeBtn_Click(object sender, EventArgs e)
+        {
+            employeeui1.Hide();
+            queriesui1.Hide();
+            departmentui1.Hide();
+        }
+
+        private void departmentui1_Load(object sender, EventArgs e)
+        {
 
         }
     }
