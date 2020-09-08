@@ -51,7 +51,7 @@
             this.groupBox1.Size = new System.Drawing.Size(977, 217);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "All Queries";
             // 
             // label1
             // 
