@@ -13,8 +13,8 @@ namespace CompanyDataBase
 
         public IEnumerable GetEmployee();
 
-        public void UpdateEmployee();
+        public void UpdateEmployee(int id,string fname, string lname, string email, string phoneNum, DateTime date, decimal salary, string dept);
 
-        public void DeleteEmployee();
+        public void DeleteEmployee(int empId);
     }
 }

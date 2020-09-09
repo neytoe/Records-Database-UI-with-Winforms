@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.EmployeedataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DeptdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,19 +47,17 @@
             this.firstnametbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeedataGridView1)).BeginInit();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HireDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepartmentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeedataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeedataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // EmployeedataGridView1
-            // 
-            this.EmployeedataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmployeedataGridView1.Location = new System.Drawing.Point(17, 368);
-            this.EmployeedataGridView1.Name = "EmployeedataGridView1";
-            this.EmployeedataGridView1.RowHeadersWidth = 51;
-            this.EmployeedataGridView1.Size = new System.Drawing.Size(987, 290);
-            this.EmployeedataGridView1.TabIndex = 0;
-            this.EmployeedataGridView1.Text = "dataGridView1";
             // 
             // groupBox1
             // 
@@ -128,6 +125,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Update Employee";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.UpdateEmployeeBtnClick);
             // 
             // button1
             // 
@@ -140,6 +138,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Delete Employee";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.DeleteEmpBtn);
             // 
             // DeptcomboBox
             // 
@@ -255,6 +254,100 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "EmployeeId";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Id.Visible = false;
+            this.Id.Width = 125;
+            // 
+            // FirstName
+            // 
+            this.FirstName.DataPropertyName = "FirstName";
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.MinimumWidth = 6;
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            this.FirstName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FirstName.Width = 125;
+            // 
+            // LastName
+            // 
+            this.LastName.DataPropertyName = "LastName";
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.MinimumWidth = 6;
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            this.LastName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.LastName.Width = 125;
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.DataPropertyName = "PhoneNumber";
+            this.PhoneNumber.HeaderText = "Phone Number";
+            this.PhoneNumber.MinimumWidth = 6;
+            this.PhoneNumber.Name = "PhoneNumber";
+            this.PhoneNumber.ReadOnly = true;
+            this.PhoneNumber.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.PhoneNumber.Width = 125;
+            // 
+            // HireDate
+            // 
+            this.HireDate.DataPropertyName = "HireDate";
+            this.HireDate.HeaderText = "Hire Date";
+            this.HireDate.MinimumWidth = 6;
+            this.HireDate.Name = "HireDate";
+            this.HireDate.ReadOnly = true;
+            this.HireDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.HireDate.Width = 125;
+            // 
+            // DepartmentId
+            // 
+            this.DepartmentId.DataPropertyName = "DepartmentId";
+            this.DepartmentId.HeaderText = "DepartmentId";
+            this.DepartmentId.MinimumWidth = 6;
+            this.DepartmentId.Name = "DepartmentId";
+            this.DepartmentId.ReadOnly = true;
+            this.DepartmentId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DepartmentId.Visible = false;
+            this.DepartmentId.Width = 125;
+            // 
+            // DepartmentName
+            // 
+            this.DepartmentName.DataPropertyName = "DepartmentName";
+            this.DepartmentName.HeaderText = "Department";
+            this.DepartmentName.MinimumWidth = 6;
+            this.DepartmentName.Name = "DepartmentName";
+            this.DepartmentName.ReadOnly = true;
+            this.DepartmentName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DepartmentName.Width = 125;
+            // 
+            // EmployeedataGridView1
+            // 
+            this.EmployeedataGridView1.AllowUserToAddRows = false;
+            this.EmployeedataGridView1.AllowUserToDeleteRows = false;
+            this.EmployeedataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EmployeedataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.FirstName,
+            this.LastName,
+            this.PhoneNumber,
+            this.HireDate,
+            this.DepartmentId,
+            this.DepartmentName});
+            this.EmployeedataGridView1.Location = new System.Drawing.Point(17, 368);
+            this.EmployeedataGridView1.Name = "EmployeedataGridView1";
+            this.EmployeedataGridView1.ReadOnly = true;
+            this.EmployeedataGridView1.RowHeadersWidth = 51;
+            this.EmployeedataGridView1.Size = new System.Drawing.Size(987, 290);
+            this.EmployeedataGridView1.TabIndex = 0;
+            this.EmployeedataGridView1.Text = "dataGridView1";
+            this.EmployeedataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeedataGridView1_CellClick);
+            // 
             // EmployeeUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -267,9 +360,9 @@
             this.Name = "EmployeeUI";
             this.Size = new System.Drawing.Size(1019, 675);
             this.Load += new System.EventHandler(this.Employee_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeedataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeedataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,5 +391,12 @@
         private System.Windows.Forms.DateTimePicker DeptdateTimePicker;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView EmployeedataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HireDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DepartmentId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DepartmentName;
     }
 }

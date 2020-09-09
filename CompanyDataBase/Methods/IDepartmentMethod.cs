@@ -11,5 +11,7 @@ namespace CompanyDataBase
         public List<Department> GetDepts();
 
         public void DeleteDept(int deptId);
+
+        public void UpdateDept(int id, string deptname);
     }
 }

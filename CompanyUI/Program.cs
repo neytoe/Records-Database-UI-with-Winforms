@@ -20,7 +20,7 @@ namespace CompanyUI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1(Config.MyConnect, Config.MyDeptMethods, Config.MyEmployeeMethods));
+            Application.Run(new Form1(Config.MyDeptMethods, Config.MyEmployeeMethods));
             
 
         }

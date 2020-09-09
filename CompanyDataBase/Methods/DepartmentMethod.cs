@@ -32,17 +32,22 @@ namespace CompanyDataBase
 
         public List<Department> GetDepts()
         {   
-
-           // List<Department> Depts = new List<Department>();
             using (var context = new ConnectContext())
             {
-
               return  context.Departments.ToList();
             }
-
-
         }
 
       
+        public void UpdateDept(int id, string deptname)
+        {
+            var dept = new Department { DepartmentId = id, DepartmentName = deptname };
+            using (var context = new ConnectContext())
+            {
+                context.Departments.Update(dept);
+                context.SaveChanges();
+            }
+
+        }
     }
 }

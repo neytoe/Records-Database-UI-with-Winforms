@@ -13,13 +13,13 @@ namespace CompanyUI
 {
     public partial class Form1 : Form
     {
-        ConnectContext Connect;
+        //ConnectContext Connect;
         public static IEmployeeMethod EmpMethods { get; set; }
         public static IDepartmentMethod DeptMethods { get; set; }
-        public Form1(ConnectContext connect, IDepartmentMethod deptMethods, IEmployeeMethod empMethods)
+        public Form1( IDepartmentMethod deptMethods, IEmployeeMethod empMethods)
         {
             InitializeComponent();
-            Connect = connect;
+           // Connect = connect;
             EmpMethods = empMethods;
             DeptMethods = deptMethods;
 
